@@ -9,4 +9,5 @@ public interface Sorter
      * Sortiert das gegebene Array in aufsteigender Reihenfolge (in-place, dh an Ort und Stelle).
      */
     public void sort(int[] array);
+
 }

@@ -16,8 +16,7 @@ public interface SortedList
 
     /**
      * Fügt einen Schlüssel in die sortierte Liste ein.
-     * @throws IllegalArgumentException
-     *         wenn der Schlüssel bereits in der Liste vorkommt.
+     * @throws IllegalArgumentException, wenn der Schlüssel bereits in der Liste vorkommt.
      */
     public void insert(int key) throws IllegalArgumentException;
 

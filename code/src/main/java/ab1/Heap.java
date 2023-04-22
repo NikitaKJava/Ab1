@@ -15,7 +15,7 @@ public interface Heap
 
     /**
      * Füge ein Element in den Heap ein.
-     * @throws IndexOutOfBoundsException falls der Schlüssel wegen begrenzter
+     * @throws IndexOutOfBoundsException, falls der Schlüssel wegen begrenzter
      *         Kapazität des Heap nicht eingefügt werden kann.
      */
     public void add(int key) throws IndexOutOfBoundsException;
@@ -23,13 +23,13 @@ public interface Heap
     /**
      * Entferne das maximale Element vom Heap.
      * @return das entfernte maximale Element.
-     * @throws NoSuchElementException falls der Heap leer ist.
+     * @throws NoSuchElementException, falls der Heap leer ist.
      */
     public int removeMax() throws NoSuchElementException;
 
     /**
      * Gib das maximale Element des Heap zurück, ohne es vom Heap zu entfernen.
-     * @throws NoSuchElementException falls der Heap leer ist.
+     * @throws NoSuchElementException, falls der Heap leer ist.
      */
     public int max() throws NoSuchElementException;
 
