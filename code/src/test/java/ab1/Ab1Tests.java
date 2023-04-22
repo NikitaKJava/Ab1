@@ -1,6 +1,6 @@
 package ab1;
 
-import ab1.impl.BerishajHagerKozlov.Ab1Impl;
+import ab1.impl.BerishajVojticekKozlov.Ab1Impl;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -9,9 +9,9 @@ import java.util.Random;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class Ab1Tests {
-    private Random rand = new Random(System.currentTimeMillis());
+    private final Random random = new Random(System.currentTimeMillis());
 
-    private static Ab1 ab1Impl = new Ab1Impl();
+    private static final Ab1 ab1Impl = new Ab1Impl();
 
     private static final int NUM_TESTS = 100;
     private static final int NUM_TESTS_MIDDLE = 200000;
@@ -33,7 +33,7 @@ public class Ab1Tests {
     private int[] getRandomArray(int size) {
         int[] array = new int[size];
         for (int i = 0; i < size; ++i)
-            array[i] = Math.abs(rand.nextInt(2 * size));
+            array[i] = Math.abs(random.nextInt(2 * size));
         return array;
     }
 }
