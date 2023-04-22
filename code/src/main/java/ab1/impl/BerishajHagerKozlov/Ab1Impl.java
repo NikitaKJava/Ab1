@@ -65,6 +65,8 @@ public class Ab1Impl implements Ab1 {
         return i;
     }
 
+    /*/rgtegegergerg
+
     static void swap(int[] data, int a, int b) {
         int temp = data[a];
         data[a] = data[b];
