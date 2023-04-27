@@ -20,6 +20,7 @@ public class Ab1Impl implements Ab1 {
         return null;
     }
 
+    
     private void quicksort(int[] data, int left, int right) {
         // End of recursion reached?
         if (left >= right) return;
