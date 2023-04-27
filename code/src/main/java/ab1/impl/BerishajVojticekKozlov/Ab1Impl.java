@@ -9,8 +9,8 @@ public class Ab1Impl implements Ab1 {
 
     @Override
     public SortedList newSortedList() {
-        // Ihre Implementierung
-        return null;
+        SortedListImpl SortedList1 = new SortedListImpl();
+        return SortedList1;
     }
 
     @Override
