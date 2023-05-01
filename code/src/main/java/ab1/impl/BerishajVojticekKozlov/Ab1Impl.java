@@ -4,7 +4,6 @@ import ab1.Ab1;
 import ab1.Heap;
 import ab1.SortedList;
 import ab1.Sorter;
-import ab1.impl.BerishajVojticekKozlov.QuickSort;
 
 public class Ab1Impl implements Ab1 {
 
