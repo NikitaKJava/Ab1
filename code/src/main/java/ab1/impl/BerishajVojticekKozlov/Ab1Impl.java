@@ -28,7 +28,7 @@ public class Ab1Impl implements Ab1 {
     @Override
     public Sorter newHeapSort(int capacity) {
         // Ihre Implementierung
-        return null;
+        return new HeapSort();
     }
 
 }
