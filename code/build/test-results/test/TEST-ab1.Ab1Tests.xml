@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ab1.Ab1Tests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-05-01T00:23:10" hostname="DESKTOP-7NPNUJT" time="1.551">
+<testsuite name="ab1.Ab1Tests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-05-02T08:47:48" hostname="DESKTOP-7NPNUJT" time="0.014">
   <properties/>
-  <testcase name="QuickSort_large()" classname="ab1.Ab1Tests" time="1.551"/>
+  <testcase name="HeapSort_small()" classname="ab1.Ab1Tests" time="0.014"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

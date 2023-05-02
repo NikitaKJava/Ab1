@@ -67,7 +67,7 @@ public class Ab1Tests {
             assertArrayEquals(b, a);
         }
     }
-
+    // test passed
     @Test
     public void SortedList_insert() {
         SortedList l = impl.newSortedList();
@@ -93,7 +93,7 @@ public class Ab1Tests {
         assertEquals(4, l.getLength());
         assertArrayEquals(new int[]{0, 1, 2, 3}, l.toArray());
     }
-
+    // test passed
     @Test
     public void SortedList_insert_exception() {
         SortedList l = impl.newSortedList();
@@ -130,12 +130,12 @@ public class Ab1Tests {
         assertEquals(4, l.getLength());
         assertArrayEquals(new int[]{2, 4, 5, 6}, l.toArray());
     }
-
+    // test passed
     @Test
     public void QuickSort_small() {
         test_Sorter_small(impl.newQuickSort());
     }
-
+    // test passed
     @Test
     public void QuickSort_large() {
         test_Sorter_large(impl.newQuickSort());
@@ -213,12 +213,12 @@ public class Ab1Tests {
             h.max();
         });
     }
-
+    // test passed
     @Test
     public void HeapSort_small() {
         test_Sorter_small(impl.newHeapSort(5));
     }
-
+    // test passed
     @Test
     public void HeapSort_large() {
         test_Sorter_large(impl.newHeapSort(ARRAY_SIZE));
