@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ab1.Ab1Tests" tests="1" skipped="0" failures="1" errors="0" timestamp="2023-05-10T21:45:05" hostname="DESKTOP-7NPNUJT" time="0.017">
+
+<testsuite name="ab1.Ab1Tests" tests="1" skipped="0" failures="1" errors="0" timestamp="2023-05-10T17:49:08" hostname="LAPTOP-0JP8HMP6" time="0.019">
   <properties/>
-  <testcase name="SortedList_insert()" classname="ab1.Ab1Tests" time="0.017">
-    <failure message="java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0" type="java.lang.ArrayIndexOutOfBoundsException">java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
-	at ab1.impl.BerishajVojticekKozlov.SortedListImpl.checkCapacity(SortedListImpl.java:118)
-	at ab1.impl.BerishajVojticekKozlov.SortedListImpl.insert(SortedListImpl.java:33)
+  <testcase name="SortedList_insert()" classname="ab1.Ab1Tests" time="0.019">
+    <failure message="java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1" type="java.lang.ArrayIndexOutOfBoundsException">java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+	at ab1.impl.BerishajVojticekKozlov.newSortedList.insert(newSortedList.java:42)
 	at ab1.Ab1Tests.SortedList_insert(Ab1Tests.java:75)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
