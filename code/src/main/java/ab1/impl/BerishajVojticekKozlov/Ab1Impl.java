@@ -9,8 +9,7 @@ public class Ab1Impl implements Ab1 {
 
     @Override
     public SortedList newSortedList() {
-        SortedListImpl SortedList1 = new SortedListImpl();
-        return SortedList1;
+        return new SortedListImpl();
     }
 
     @Override
@@ -22,7 +21,7 @@ public class Ab1Impl implements Ab1 {
     @Override
     public Heap newHeap(int capacity) {
         // Ihre Implementierung
-        return null;
+        return new BinaryHeap(capacity);
     }
 
     @Override
@@ -30,7 +29,4 @@ public class Ab1Impl implements Ab1 {
         // Ihre Implementierung
         return new HeapSort();
     }
-
 }
-
-

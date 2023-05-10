@@ -67,7 +67,7 @@ public class Ab1Tests {
             assertArrayEquals(b, a);
         }
     }
-    // test passed
+
     @Test
     public void SortedList_insert() {
         SortedList l = impl.newSortedList();
@@ -93,7 +93,7 @@ public class Ab1Tests {
         assertEquals(4, l.getLength());
         assertArrayEquals(new int[]{0, 1, 2, 3}, l.toArray());
     }
-    // test passed
+
     @Test
     public void SortedList_insert_exception() {
         SortedList l = impl.newSortedList();
@@ -105,7 +105,7 @@ public class Ab1Tests {
             l.insert(2);
         });
     }
-
+    // TODO
     @Test
     public void SortedList_remove() {
         SortedList l = impl.newSortedList();
@@ -154,7 +154,7 @@ public class Ab1Tests {
             assertEquals(i + 1, h.size());
         }
     }
-
+    // test passed
     @Test
     public void Heap_add() {
         test_Heap_add(new int[]{1, 2, 3, 7, 4, 7, 6});
@@ -174,13 +174,13 @@ public class Ab1Tests {
             assertEquals(i, h.size());
         }
     }
-
+    // test passed
     @Test
     public void Heap_remove() {
         test_Heap_remove(new int[]{5, 2, 3, 5, 4, 7, 6});
         test_Heap_remove(new int[]{2, 2, 3, 7, 4, 6, 8, 5});
     }
-
+    // test passed
     @Test
     public void Heap_add_exception() {
         Heap h = impl.newHeap(3);
@@ -192,7 +192,7 @@ public class Ab1Tests {
             h.add(4);
         });
     }
-
+    // test passed
     @Test
     public void Heap_remove_exception() {
         Heap h = impl.newHeap(3);
@@ -201,7 +201,7 @@ public class Ab1Tests {
             h.removeMax();
         });
     }
-
+    // test passed
     @Test
     public void Heap_max_exception() {
         Heap h = impl.newHeap(3);

@@ -38,16 +38,16 @@ public class HeapSort implements Sorter {
      */
     private void heapify(int[] array, int n, int i) {
         int largest = i; // Initialize largest as root
-        int l = 2 * i + 1; // left = 2*i + 1
-        int r = 2 * i + 2; // right = 2*i + 2
+        int left = 2 * i + 1; // left = 2*i + 1
+        int right = 2 * i + 2; // right = 2*i + 2
 
         // If left child is larger than root
-        if (l < n && array[l] > array[largest])
-            largest = l;
+        if (left < n && array[left] > array[largest])
+            largest = left;
 
         // If right child is larger than largest so far
-        if (r < n && array[r] > array[largest])
-            largest = r;
+        if (right < n && array[right] > array[largest])
+            largest = right;
 
         // If largest is not root
         if (largest != i) {
