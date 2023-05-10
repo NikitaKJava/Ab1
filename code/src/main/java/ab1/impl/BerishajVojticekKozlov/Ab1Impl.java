@@ -9,8 +9,7 @@ public class Ab1Impl implements Ab1 {
 
     @Override
     public SortedList newSortedList() {
-        SortedListImpl SortedList1 = new SortedListImpl();
-        return SortedList1;
+        return new newSortedList();
     }
 
     @Override
