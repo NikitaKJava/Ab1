@@ -7,24 +7,31 @@ public class newSortedList implements SortedList {
 
     private int[] list;
     private int size;
+    int capacity=0;
 
     public newSortedList(){
-        list = new int[1];
-        size = 0;
+        new newSortedList(this.capacity);
+    }
+    public newSortedList(int capacity){
+        list = new int[capacity];
+        this.size = 0;
+        this.capacity = capacity;
     }
 
     @Override
     public void clear() {
-        list = new int[list.length];
+        list = new int[0];
+        this.size = 0;
     }
 
     @Override
     public void insert(int key) throws IllegalArgumentException {
-        if(size==list.length){
-            int[] newList = new int[list.length + 1];
-            System.arraycopy(list, 0, newList, 0, list.length);
-            list = newList;
-        }
+        //if(size==this.list.length || this.list == null){
+            int[] newList = new int[size + 1];
+            for(int i=0; i<newList.length-1; i++){
+                newList[i]=list[i];
+            }
+        //}
         for(int i=0; i<list.length; i++){
             if(key == list[i]){
                 throw new IllegalArgumentException("key already exists");
@@ -39,8 +46,9 @@ public class newSortedList implements SortedList {
         for(int j=list.length-1; j>i; j--){
             list[j] = list[j-1];
         }
-        list[i]=key;
+        newList[newList.length-1]=key;
         size++;
+        list = newList;
     }
 
     @Override

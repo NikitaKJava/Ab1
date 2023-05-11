@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<testsuite name="ab1.Ab1Tests" tests="1" skipped="0" failures="1" errors="0" timestamp="2023-05-10T17:49:08" hostname="LAPTOP-0JP8HMP6" time="0.019">
+<testsuite name="ab1.Ab1Tests" tests="1" skipped="0" failures="1" errors="0" timestamp="2023-05-11T18:20:09" hostname="LAPTOP-0JP8HMP6" time="0.029">
   <properties/>
-  <testcase name="SortedList_insert()" classname="ab1.Ab1Tests" time="0.019">
-    <failure message="java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1" type="java.lang.ArrayIndexOutOfBoundsException">java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
-	at ab1.impl.BerishajVojticekKozlov.newSortedList.insert(newSortedList.java:42)
+  <testcase name="SortedList_insert()" classname="ab1.Ab1Tests" time="0.029">
+    <failure message="java.lang.NullPointerException: Cannot read the array length because &quot;this.list&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot read the array length because &quot;this.list&quot; is null
+	at ab1.impl.BerishajVojticekKozlov.newSortedList.insert(newSortedList.java:30)
 	at ab1.Ab1Tests.SortedList_insert(Ab1Tests.java:75)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
