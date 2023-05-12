@@ -7,6 +7,7 @@ public class SortedListImpl implements ab1.SortedList {
 
     public SortedListImpl() {
         data = new int[0];
+        size = 0;
     }
 
     /**
@@ -16,7 +17,7 @@ public class SortedListImpl implements ab1.SortedList {
     @Override
     public void clear() {
         this.data = new int[0];
-        size = 0;
+        this.size = 0;
     }
 
     /**
