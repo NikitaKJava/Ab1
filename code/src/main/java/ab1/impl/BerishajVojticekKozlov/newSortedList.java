@@ -2,7 +2,6 @@ package ab1.impl.BerishajVojticekKozlov;
 
 import ab1.SortedList;
 
-
 public class newSortedList implements SortedList {
 
     private int[] list;
@@ -17,7 +16,6 @@ public class newSortedList implements SortedList {
         this.size = 0;
         this.capacity = capacity;
     }
-
     @Override
     public void clear() {
         this.list = new int[0];
@@ -26,7 +24,7 @@ public class newSortedList implements SortedList {
 
     @Override
     public void insert(int key) throws IllegalArgumentException {
-        //array length + 1
+        //new array length + 1
             int[] newList = new int[size + 1];
 
         //copy elements in new array
@@ -36,14 +34,15 @@ public class newSortedList implements SortedList {
 
         //check if key already exists in list, if not insert key in last index
         if(newList.length!=1){
-        for(int i=0; i<newList.length; i++) {
-            if (key == newList[i]) {
-                throw new IllegalArgumentException("key already exists");
-            }
+            for(int i=0; i<newList.length; i++) {
+                if (key == newList[i]) {
+                    throw new IllegalArgumentException("key already exists");
+                }
             }
         }
         newList[newList.length - 1] = key;
 
+        //sort new element in array
         int i= 0;
         while(i<newList.length){
             if(newList[i]>newList[newList.length-1]){
@@ -60,7 +59,9 @@ public class newSortedList implements SortedList {
     @Override
     public boolean remove(int key) {
         boolean removed = false;
+        //create new array length-1
         int[] newList = new int[list.length - 1];
+        //check if key exists in array, if yes copy elements in new array without key
         for (int i = 0; i < list.length; i++) {
             if (list[i] == key) {
                 int k = 0;
@@ -84,6 +85,7 @@ public class newSortedList implements SortedList {
         return list.length;
     }
 
+    //copy all elements in new array
     @Override
     public int[] toArray() {
         int[] array = new int[list.length];
