@@ -20,33 +20,39 @@ public class newSortedList implements SortedList {
 
     @Override
     public void clear() {
-        list = new int[0];
+        this.list = new int[0];
         this.size = 0;
     }
 
     @Override
     public void insert(int key) throws IllegalArgumentException {
-        //if(size==this.list.length || this.list == null){
+        //array length + 1
             int[] newList = new int[size + 1];
-            for(int i=0; i<newList.length-1; i++){
-                newList[i]=list[i];
-            }
-        //}
-        for(int i=0; i<list.length; i++){
-            if(key == list[i]){
+
+        //copy elements in new array
+        for(int i=0; i<newList.length-1; i++){
+            newList[i]=list[i];
+        }
+
+        //check if key already exists in list, if not insert key in last index
+        if(newList.length!=1){
+        for(int i=0; i<newList.length; i++) {
+            if (key == newList[i]) {
                 throw new IllegalArgumentException("key already exists");
             }
-        }
-        int i;
-        for(i=0; i < list.length; i++){
-            if(list[i] > key){
-                break;
             }
         }
-        for(int j=list.length-1; j>i; j--){
-            list[j] = list[j-1];
+        newList[newList.length - 1] = key;
+
+        int i= 0;
+        while(i<newList.length){
+            if(newList[i]>newList[newList.length-1]){
+                int copy = newList[i];
+                newList[i] = newList[newList.length-1];
+                newList[newList.length-1] = copy;
+            }
+            i++;
         }
-        newList[newList.length-1]=key;
         size++;
         list = newList;
     }
@@ -54,24 +60,23 @@ public class newSortedList implements SortedList {
     @Override
     public boolean remove(int key) {
         boolean removed = false;
-        for(int i=0; i<list.length; i++){
-            if(key != list[i]){
-                removed = false;
-            }
-            else if(key==list[i]){
-                int[] newList = new int[list.length - 1];
-                for(int j=0; j<i; j++){
-                    newList[j] = list[j];
+        int[] newList = new int[list.length - 1];
+        for (int i = 0; i < list.length; i++) {
+            if (list[i] == key) {
+                int k = 0;
+                for (int j = 0; j < list.length; j++) {
+                    if (list[j] != key) {
+                        newList[k] = list[j];
+                        k++;
+                    }
+                    removed = true;
                 }
-                for(int k=i+1; k<list.length; k++){
-                    newList[k] = list[k];
-                }
-                list = newList;
-                removed = true;
             }
         }
+        if(removed == true) {
+            this.list = newList;
+        }
         return removed;
-
     }
 
     @Override
@@ -81,7 +86,11 @@ public class newSortedList implements SortedList {
 
     @Override
     public int[] toArray() {
-        return list;
+        int[] array = new int[list.length];
+        for(int i = 0; i<array.length; i++){
+            array[i] = list[i];
+        }
+        return array;
     }
 }
 
