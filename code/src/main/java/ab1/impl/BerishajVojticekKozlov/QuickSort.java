@@ -14,43 +14,47 @@ public class QuickSort implements Sorter {
     public void sort(int[] array) {
         quicksort(array, 0, array.length - 1);
     }
+
     /**
-     * Recursively partitions and sorts the given subarray using the quicksort algorithm.
+     * Quicksort method checks from both sides and sorts the given subarray using the quicksort algorithm.
      *
      * @param array the integer array to sort
-     * @param left  the index of the leftmost element in the subarray to sort
-     * @param right the index of the rightmost element in the subarray to sort
+     * @param m  the index of the leftmost element in the initial array and subarray to sort
+     * @param M the index of the rightmost element in the initial array and subarray to sort
      */
-    private void quicksort(int[] array, int left, int right) {
-        if (left < right) {
-            int pivotIndex = partition(array, left, right);
-            quicksort(array, left, pivotIndex - 1);
-            quicksort(array, pivotIndex + 1, right);
+    private void quicksort(int[] array, int m, int M) {
+        if (M > m) {
+            int i = m - 1; // left pointer
+            int j = M; // right pointer
+            int pivot = array[M]; // Pivot element at the right end
+            while (true) {
+                do {
+                    i++; // until array[i] >= p
+                } while (array[i] < pivot);
+                do {
+                    j--; // until array[i] <= p
+                } while (array[j] > pivot && j > 0);
+                if (i >= j) { // if both pointer reach it other, it stops
+                    break;
+                }
+                swap(array, i, j); // swap array[i] and array[j]
+            }
+            swap(array, i, M); // Pivot element to the correct position
+            quicksort(array, m, i - 1); //
+            quicksort(array, i + 1, M);
         }
     }
+
     /**
-     * Partitions the given subarray around a pivot element, and returns the index of the pivot.
+     * swap method is a helper to replace two elements in the array
      *
-     * @param array the integer array to partition
-     * @param left  the index of the leftmost element in the subarray to partition
-     * @param right the index of the rightmost element in the subarray to partition
-     * @return the index of the pivot element after partitioning
+     * @param array the integer array
+     * @param i  the index of the first element
+     * @param j the index of the second element
      */
-    private int partition(int[] array, int left, int right) {
-        int pivot = array[right];
-        int i = left - 1;
-        for (int j = left; j < right; j++) {
-            if (array[j] < pivot) {
-                i++;
-                int temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
-            }
-        }
-        // swap
-        int temp = array[i+1];
-        array[i+1] = array[right];
-        array[right] = temp;
-        return i + 1;
+    private static void swap(int[] array, int i, int j) {
+        int tmp = array[i];
+        array[i] = array[j];
+        array[j] = tmp;
     }
 }

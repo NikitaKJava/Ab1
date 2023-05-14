@@ -2,14 +2,13 @@ package ab1.impl.BerishajVojticekKozlov;
 
 import ab1.Ab1;
 import ab1.Heap;
-import ab1.SortedList;
 import ab1.Sorter;
 
 public class Ab1Impl implements Ab1 {
 
     @Override
-    public SortedList newSortedList() {
-        return new newSortedList();
+    public ab1.SortedList newSortedList() {
+        return new SortedList();
     }
 
     @Override

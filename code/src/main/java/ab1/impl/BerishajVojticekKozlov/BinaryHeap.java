@@ -6,9 +6,9 @@ import java.util.NoSuchElementException;
 
 public class BinaryHeap implements Heap {
 
-    private int[] heapArray;
+    private final int[] heapArray;
     private int size;
-    private int capacity;
+    private final int capacity;
 
     /**
      * method sets all elements of the array to zero and resets the size of the heap to zero.
@@ -25,8 +25,8 @@ public class BinaryHeap implements Heap {
      */
     @Override
     public void clear() {
-
-        for (int i = 0; i < heapArray.length; i++) {
+        int i;
+        for (i = 0; i < heapArray.length; i++) {
             heapArray[i] = 0;
         }
         size = 0;
@@ -99,8 +99,8 @@ public class BinaryHeap implements Heap {
      */
     private void heapify(int key) {
         int largest = key; // Initialize largest as root
-        int left = 2 * key; // left = 2*i + 1
-        int right = 2 * key + 1; // right = 2*i + 2
+        int left = 2 * key; // left = 2 * i + 1
+        int right = 2 * key + 1; // right = 2 * i + 2
         // If left child is larger than root
         if (left <= size && heapArray[left] > heapArray[largest]) {
             largest = left;
@@ -115,9 +115,9 @@ public class BinaryHeap implements Heap {
     }
 
     /**
-     * The swap method is a helper method used to swap to values
-     * @param i value 1
-     * @param j value 2
+     * The swap method is a helper method used to swap two elements
+     * @param i the index of the first element
+     * @param j the index of the second element
      */
     private void swap(int i, int j) {
         int temp = heapArray[i];
